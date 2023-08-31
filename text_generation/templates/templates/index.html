@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Text Generator</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <style>
+    /* Center-align the login box */
+    .login {
+      margin: auto;
+      width: 50%;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="login">
+    <h1>Text Generator</h1>
+    <form action="{{ url_for('generate')}}" method="post">
+      <input type="text" name="text" placeholder="Text" required="required" />
+      <input type="text" name="next_words" placeholder="No. of Words to Generate" required="required" />
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    <br><br>
+    {{ prediction }}
+  </div>
+</body>
+</html>
